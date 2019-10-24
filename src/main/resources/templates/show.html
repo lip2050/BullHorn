@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BullHorn</title>
+</head>
+<body>
+<a href="/">Show All The Messages</a><br />
+Content :<span th:text="${message.content}"></span><br />
+Date Posted :<span th:text="${message.posteddate}"></span><br />
+Sent By :<span th:text="${message.sentby}"></span><br />
+<a th:href="@{/delete/{id}(id=${message.id})}">Delete this message</a>
+
+</body>
+</html>
