@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>BullHorn</title>
@@ -7,16 +7,16 @@
 <body>
 <h2>Message</h2>
 <form action="#" th:action="@{/process}" th:object="${message}" method="post">
-    <input type="hidden" th:field="*{id}"/>
+    <input type="hidden" th:field="*{id}" />
     Content :<textarea rows="4" th:field="*{content}" />
     <span th:if="${#fields.hasErrors('content')}"
           th:errors="*{content}"></span><br />
-    Date Posted:<input type="date" th:field="*{posteddate}" />
-    <span th:if="${#fields.hasErrors('posteddate')}"
-          th:errors="*{posteddate}"></span><br />
-    Sent By ::<input type="text" th:field="*{sentby}" />
-    <span th:if="${#fields.hasErrors('sentby')}"
-          th:errors="*{sentby}"></span><br />
+    Date Posted :<input type="date" th:field="*{postedDate}" />
+    <span th:if="${#fields.hasErrors('postedDate')}"
+          th:errors="*{postedDate}"></span><br />
+    Sent By ::<input type="text" th:field="*{sentBy}" />
+    <span th:if="${#fields.hasErrors('sentBy')}"
+          th:errors="*{sentBy}"></span><br />
     <br />
     <input type="submit" value="Send" />
 

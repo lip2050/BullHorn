@@ -14,12 +14,12 @@ public class Message {
     private long id;
 
     @NotNull
-    @Size(max=150)
+    @Size(max = 150)
     private String content;
 
-    private String posteddate;
+    private String postedDate;
 
-    private String sentby;
+    private String sentBy;
 
     public long getId() {
         return id;
@@ -37,19 +37,19 @@ public class Message {
         this.content = content;
     }
 
-    public String getPosteddate() {
-        return posteddate;
+    public String getPostedDate() {
+        return postedDate;
     }
 
-    public void setPosteddate(String posteddate) {
-        this.posteddate = posteddate;
+    public void setPostedDate(String postedDate) {
+        this.postedDate = postedDate;
     }
 
-    public String getSentby() {
-        return sentby;
+    public String getSentBy() {
+        return sentBy;
     }
 
-    public void setSentby(String sentby) {
-        this.sentby = sentby;
+    public void setSentBy(String sentBy) {
+        this.sentBy = sentBy;
     }
 }
