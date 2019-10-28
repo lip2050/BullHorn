@@ -17,6 +17,12 @@
 <h2>Message List</h2>
     </div>
 <a href="/add">Add Messages</a><br />
+<a href="/add">Add image</a>
+    <div th:each="message : ${actors}">
+        <div th:if="${message.headshot} !=null">
+            <img th:src="${message.hedshot}" /><hr />
+        </div>
+    </div>
 <table>
     <tr> <th>Date Posted</th>
         <th>Sent By</th>

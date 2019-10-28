@@ -22,6 +22,10 @@
     Content :<textarea rows="4" th:field="*{content}" />
     <span th:if="${#fields.hasErrors('content')}"
           th:errors="*{content}"></span><br />
+<form method="POST" action="/add" th:object="${message}"
+      enctype="multipart/form-data">
+    <input type="file" name="upload image" />
+</form>
     Date Posted :<input type="date" th:field="*{postedDate}" />
     <span th:if="${#fields.hasErrors('postedDate')}"
           th:errors="*{postedDate}"></span><br />
