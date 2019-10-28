@@ -17,6 +17,8 @@ public class Message {
     @Size(max = 150)
     private String content;
 
+    private String headshot;
+
     private String postedDate;
 
     private String sentBy;
@@ -51,5 +53,13 @@ public class Message {
 
     public void setSentBy(String sentBy) {
         this.sentBy = sentBy;
+    }
+
+    public String getHeadshot() {
+        return headshot;
+    }
+
+    public void setHeadshot(String headshot) {
+        this.headshot = headshot;
     }
 }
