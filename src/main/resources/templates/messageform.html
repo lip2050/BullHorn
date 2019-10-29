@@ -21,19 +21,20 @@
     <input type="hidden" th:field="*{id}" />
     Content :<textarea rows="4" th:field="*{content}" />
     <span th:if="${#fields.hasErrors('content')}"
-          th:errors="*{content}"></span><br />
-<form method="POST" action="/add" th:object="${message}"
+          th:errors="*{content}"></span><br /><br />
+<form method="POST" action="/" th:object="${message}"
       enctype="multipart/form-data">
-    <input type="file" name="upload image" />
-</form>
+    <input type="file" name="file" /><br/><br />
+
     Date Posted :<input type="date" th:field="*{postedDate}" />
     <span th:if="${#fields.hasErrors('postedDate')}"
-          th:errors="*{postedDate}"></span><br />
+          th:errors="*{postedDate}"></span><br /><br />
     Sent By ::<input type="text" th:field="*{sentBy}" />
     <span th:if="${#fields.hasErrors('sentBy')}"
-          th:errors="*{sentBy}"></span><br />
+          th:errors="*{sentBy}"></span><br /><br />
     <br />
     <input type="submit" value="Send" class="btn btn-info">
+</form>
 </form>
 
 </div>

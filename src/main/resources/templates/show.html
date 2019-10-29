@@ -12,6 +12,7 @@
         <a href="/"><botton type="button" class="btn btn-warning">Show All The Messages</botton></a><br />
     </div>
 Content :<p th:text="${message.content}" ></p>
+
 Date Posted :<span th:text="${message.postedDate}" ></span><br />
 Sent By :<span th:text="${message.sentBy}" ></span><br />
     <a th:href="@{/delete/{id}(id=${message.id})}"><button type="button" class="btn btn-danger">Delete this message</button></a>

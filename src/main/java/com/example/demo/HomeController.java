@@ -16,6 +16,7 @@ import java.util.Map;
 public class HomeController {
     @Autowired
     MessageRepository messageRepository;
+    CloudinaryConfig cloudc;
 
     @RequestMapping("/")
     public String homePage(Model m){
@@ -56,10 +57,8 @@ public class HomeController {
         return "redirect:/";
     }
 
-    @Autowired
-    CloudinaryConfig cloudc;
 
-    @RequestMapping("/")
+    /*@RequestMapping("/")
     public String homepage(Model m){
         m.addAttribute("messages", messageRepository.findAll());
         return "list";
@@ -68,7 +67,7 @@ public class HomeController {
     public String messageform(Model m){
         m.addAttribute("message", new Message());
         return "form";
-    }
+    }*/
     @PostMapping("/add")
     public String processForm(@ModelAttribute Message message,
                               @RequestParam("file")MultipartFile file){
