@@ -23,6 +23,16 @@ public class Message {
 
     private String sentBy;
 
+    public Message(@NotNull @Size(max = 150) String content, String headshot, String postedDate, String sentBy) {
+        this.content = content;
+        this.headshot = headshot;
+        this.postedDate = postedDate;
+        this.sentBy = sentBy;
+    }
+
+    public Message() {
+    }
+
     public long getId() {
         return id;
     }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 
     <meta charset="UTF-8" />
@@ -13,20 +13,25 @@
     </style>
 </head>
 <body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">BullHorn</a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
 <div class="container">
     <div class="jumbotron">
 <h2>Message</h2>
     </div>
-<form action="#" th:action="@{/process}" th:object="${message}" method="post">
+    <form method="POST" th:action="@{/add}" th:object="${message}"
+          enctype="multipart/form-data">
     <input type="hidden" th:field="*{id}" />
-    Content :<textarea rows="4" th:field="*{content}" />
+        Content :<textarea rows="4" th:field="*{content}" ></textarea>
     <span th:if="${#fields.hasErrors('content')}"
           th:errors="*{content}"></span><br /><br />
-<form method="POST" action="/" th:object="${message}"
-      enctype="multipart/form-data">
-    <input type="file" name="file" /><br/><br />
-
-    Date Posted :<input type="date" th:field="*{postedDate}" />
+        <input type="file" name="file" /><br/><br />
+        Date Posted :<input type="date" th:field="*{postedDate}" />
     <span th:if="${#fields.hasErrors('postedDate')}"
           th:errors="*{postedDate}"></span><br /><br />
     Sent By ::<input type="text" th:field="*{sentBy}" />
@@ -35,7 +40,7 @@
     <br />
     <input type="submit" value="Send" class="btn btn-info">
 </form>
-</form>
+
 
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,6 +12,13 @@
     </style>
 </head>
 <body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">BullHorn</a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
 <div class="container">
     <div class="jumbotron">
 <h2>Message List</h2>
@@ -20,9 +27,8 @@
 <a href="/add">Add image</a>
     <div th:each="message : ${messages}">
         <div th:if="${message.headshot} !=null">
-            <img th:src="${message.hedshot}" /><hr />
+            <img th:src="${message.headshot}" /><hr />
         </div>
-    </div>
 <table>
     <tr> <th>Date Posted</th>
         <th>Sent By</th>
@@ -39,6 +45,7 @@
             </div>
         </td></tr>
 </table>
+</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

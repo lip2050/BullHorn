@@ -16,6 +16,7 @@ import java.util.Map;
 public class HomeController {
     @Autowired
     MessageRepository messageRepository;
+    @Autowired
     CloudinaryConfig cloudc;
 
     @RequestMapping("/")
